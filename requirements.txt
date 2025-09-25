@@ -1,0 +1,6 @@
+adafruit-blinka
+adafruit-circuitpython-bme280
+influxdb-client
+requests
+RPi.GPIO
+mh-z19
