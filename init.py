@@ -1,5 +1,5 @@
 from config.config import DEFAULT_SEA_LEVEL_PRESSURE, INFLUXDB_ORG, INFLUXDB_TOKEN, INFLUXDB_URL
-import adafruit_bme280
+from adafruit_bme280 import basic as adafruit_bme280
 import board
 from influxdb_client import InfluxDBClient
 from influxdb_client.client.write_api import SYNCHRONOUS
@@ -31,7 +31,7 @@ except (ValueError, RuntimeError) as e:
 
 # MH-Z19Eセンサー初期化
 try:
-    co2_sensor = MHZ19E(serial_device='/dev/serial0')  # Raspberry Piのシリアルポート
+    co2_sensor = MHZ19E()  # Raspberry Piのシリアルポート
     if co2_sensor.available:
         co2_sensor.set_auto_calibration(True)  # 自動校正を有効にする
         print("MH-Z19E CO2センサーを初期化しました")
